@@ -5,7 +5,7 @@ import Movies from './components/Movies'
 // import Rating from "./components/Rating";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signup from "./components/Signup";
-import Login from "./components/Signup";
+import Login from "./components/Login";
 
 
 function App() {
