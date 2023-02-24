@@ -1,24 +1,36 @@
-import { useState } from "react"
+import { useState } from "react";
+import axios from 'axios'
 
 const Signup = () => {
-  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(email, password)
+    console.log(name, password , username)
+    const res = await axios.post('https://zpworkshopapis.netlify.app/.netlify/functions/account/signup',{username : username , name : name , password : password});
+    console.log(res);
+    
+    
   }
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
-      <h3>Login</h3>
+      <h3>Sign up</h3>
       
-      <label>Email address:</label>
+      <label>Name</label>
+      <input 
+        type="text" 
+        onChange={(e) => setName(e.target.value)} 
+        value={name}
+      />
+      <label>Username</label>
       <input 
         type="email" 
-        onChange={(e) => setEmail(e.target.value)} 
-        value={email} 
+        onChange={(e) => setUsername(e.target.value)} 
+        value={username}
       />
       <label>Password:</label>
       <input 
