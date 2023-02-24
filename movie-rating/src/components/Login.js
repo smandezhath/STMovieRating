@@ -10,6 +10,8 @@ const Login = () => {
 
       const res = await axios.post('https://zpworkshopapis.netlify.app/.netlify/functions/account/login',{username : username , password : password});
       console.log(res);
+
+      localStorage.setItem("loggedIn","true");
       // console.log(username,password)
   }
 
