@@ -17,7 +17,7 @@ const Signup = () => {
       { username: username, name: name, password: password }
     );
     console.log(res);
-    debugger;
+    // debugger;
     navigate("/login");
   };
 

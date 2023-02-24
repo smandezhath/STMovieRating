@@ -1,17 +1,22 @@
 import { useState } from "react"
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
       const res = await axios.post('https://zpworkshopapis.netlify.app/.netlify/functions/account/login',{username : username , password : password});
-      console.log(res);
+      console.log(res.status);
 
-      localStorage.setItem("loggedIn","true");
+      if(res.status === 200){
+        localStorage.setItem("loggedIn","true");
+        navigate('/movies');
+      }
       // console.log(username,password)
   }
 

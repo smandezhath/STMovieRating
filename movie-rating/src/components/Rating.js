@@ -5,17 +5,12 @@ const Rating = () => {
   const [ratingValue, setratingValue] = useState("0");
 
   return (
-    <div className="slider">
-      <input
-        type="range"
-        min="0"
-        max="5"
-        value="0"
-        onInput={(e) => {
-          setratingValue(e.target.value);
-        }}
-      />
-      <p id="rangeValue">{ratingValue}</p>
+    <div>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
     </div>
   );
 };

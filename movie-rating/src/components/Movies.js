@@ -24,9 +24,10 @@ const Movies = () => {
         ? data.map((movieItem, movieIndex) => {
             return (
               <div className="card">
+                {/* <div className="title">{movieItem?._id}</div> */}
                 <div className="title">{movieItem?.title}</div>
-                <div className="description">{movieItem?.description}</div>
-                {/* <Rating/> */}
+                <div className="description">{movieItem?.description}</div><br />
+                <Rating/>
               </div>
             );
           })
